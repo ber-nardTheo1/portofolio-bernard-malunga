@@ -1,0 +1,114 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Bernard Malunga">
+    <meta property="og:type" content="portofolio">
+    <title>Bernard Malunga</title>
+    <link rel="stylesheet" href="{% static 'styles.css'%}"> 
+</head>
+<body>
+    <header>
+        <section>
+        <div>
+            <ul class="nav-link">
+                <nav class="nav-bar-logo">
+                    <img class="logo-image" style="width:30%; border:0px solid; border-radius:50%; margin-bottom:1%;
+                    " src={% static 'Bernard_logo.jpg' %}>
+                </nav>
+            </ul>
+        </div>
+        <div>
+            <ul class="left-nav-link">
+                <nav class="left-nav-bar">
+                    <li class="btn-home" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
+                    <li class="work-background" style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
+                    <li calss="about-btn" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
+                    <li class="Articles-btn" style="padding-left:2%;"><a href={% url 'post'%}>Articles</a></li>
+                </nav>
+            </ul>
+        </div>
+        </section>
+    </header>
+    {% block content %}
+  
+    <main>
+        <div class="content-column">
+            <div class="article-metadata">
+                <h2 class="article-title" style=" margin-left: 15%;  padding-left: 15%; 
+                    font-size: 200%;
+                    background: -webkit-linear-gradient(black, green);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    }
+                  "> Web-Developer</h2>
+                <p class="article-content"  id="self-introduction" style=" font-style: italic;  margin-left: 15%;
+                  padding-left: 15%;  margin-top: 1%;">
+                    Welcome to my career portofolio. I graduated from Nagoya University with a master`s degree in Economic Development
+                    and Policy Management. I am also a self-taught junior programmer. I Develop web applications using Django framework, Python,
+                    JavaScript, HTML and CSS.
+                    <br> I like developing my practical and theorical skills to enhance my career path and 
+                    also develop my personality. I hope this portofolio provides insight into my character, programming background, analytical skills, and accomplishments.
+                </p>
+            </div>
+            <div class= "images-colums">
+                <div class="image-column">
+                    <img class="image-content" id="image-el" src={% static 'Bernard.jpg' %}>
+                </div>
+                <div class="farm-image-column">
+                    <img class="farm-image" id="image-el" src={% static 'Bernard_farm.jpg' %}>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <footer class="contant-columns">
+                <ul class="details"  style="margin-left:20%;">
+                    <button  style="margin-left:20%;">
+                        <li class="email-contact">theomalunga0@gmail.com</li>
+                    </button>
+                    <button>
+                        <li class="linkedln-contact"><a href="https://www.linkedin.com/in/bernard-malunga-674760104/">Linkeldn</a></li>
+                    </button>
+                    <button>
+                        <li class="github-contact"><a href="https://github.com/ber-nardTheo1">GitHub</a></li>
+                    </button>
+                </u>
+            <p style="margin-left: 20%; margin-top:1%;"> Copyright © 2022 Bernard Malunga</p>   
+            </footer>
+        </div>
+    </main>    
+</body>
+</html>
+<style>
+    .farm-image{
+        max-width: 70%;
+        border-radius: 30px;
+        margin-left: 20%;
+        object-fit: contain;
+    }
+
+
+    .image-content{
+        object-fit: contain;
+        max-width: 60%;
+        border: 0px solid;
+        border-radius: 30px;
+        margin-top: 90%;
+        margin-left:20%;
+        margin-bottom: 5%;
+    }
+    @media only screen and (max-width: 600px) {
+        .image-content {
+          margin-top:210%
+        }
+
+        h2{
+            font-size:100%
+        }
+      }
+</style>
+{% endblock %}

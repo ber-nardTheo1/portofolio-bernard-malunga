@@ -1,0 +1,146 @@
+{% extends "mywebsite/home.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="flex-container">
+    <div class="container-column">
+        {% for Post in object_list %}
+             <article class="media content-section">
+                <div class= "media-content">
+                    <h2><a class="article-title" href={% url 'post_detail' pk=Post.pk%}>{{ Post.title }}</a></h2>
+                    <p class="article-content">{{ Post.content | safe }}</p>
+                    <div class="media-body">
+                        {% if Post.image %}
+                            <img class="image-content" id="image-el" src = "{{ Post.image.url }}">
+                        {% endif %}
+                    </div>
+                    <small class="article-date">{{ Post.date|date:"F d, Y" }}</small>
+                    <div class="like-share-btns"> 
+                    <span id="count"></span>
+                    </div>
+                </div>
+            <script type= "text/javascript" src="{% static 'script.js' %}"></script>
+            <script type= "text/javascript" src="{% static 'ckeditor-init.js' %}"></script>
+            </article>
+        {% endfor %}
+    </div>
+<div class="pagination-el" style="margin-bottom:30px; margin-left:0%;
+ padding-right:45%; text-align:center; margin-top:0;">
+    {% if is_paginated %}
+    <div>
+        {% if page_obj.has_previous %}
+            <button>
+                <a class="btn btn-outline-info mb-4" href="?page=1"> First</a>
+            </button>
+            <button>
+                <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+            </button>
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+        {% endif %}
+      
+        {% if page_obj.has_next %}
+            <button>
+                <a href="?page={{ page_obj.next_page_number }}">Next</a>
+            </button>
+            <button>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+            </button>
+            <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+            </span>
+        </div>
+        {% endif %}
+    {% endif %}
+   
+    </div>
+</div>
+<style>
+    @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+    
+    *{
+        margin:0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+    article{
+        margin-top:2%;
+        align-content:center;
+        margin-left:20%; 
+        padding-right:10%;
+    }
+
+    .media-content{
+        border: 1px solid white;
+        border-radius:30px;
+        width:70%;
+        padding-left:5%;
+        padding-right:5%;
+        padding-bottom:1%;
+        box-shadow:5px 5px 5px 5px grey;
+
+    }
+    .article-title{
+        margin-top:5%;
+        align-content:center;
+
+    }
+
+    h2 {
+        margin-bottom:2%;
+        margin-top:2%;
+        border-bottom:2px solid black;
+        max-width:100%;
+       
+    }
+
+    .image-content{
+        margin-top:2%;
+        width:20%;
+        margin-bottom:3%;
+
+        text-align:center;
+
+      }
+
+      .article-date{
+        margin-right:2%;
+        font-style:italic;
+        margin-top:5%;
+    
+      }
+
+      button {
+        cursor: pointer;
+        background-color:white;
+        padding:1%;
+        border:1% solid black;
+        border-radius:30px;
+        align-content:center;
+        box-shadow:5px 5px 5px 5px white;
+    }
+
+
+    button a:hover{
+        color:green;
+        font-weight:15px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        button {
+          background-color: lightblue;
+          box-shadow:5px 5px 5px 5px lightblue;
+        }
+      }
+
+
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "mywebsite/home.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="flex-container">
+    <div class="container-column">
+             <article class="media content-section">
+                <div class="media-body">
+                    {% if object.image %}
+                        <img class="image-content" id="image-el" src = "{{ object.image.url }}">
+                    {% endif %}
+                </div>
+                <div class= "media-content">
+                    <h2><a class="article-title" href="">{{ object.title }}</a></h2>
+                    <p class="article-content">{{ object.content | safe }}</p>
+                    <small class="article-date">{{ object.date|date:"F d, Y" }}</small>
+                    <div class="like-share-btns"> 
+                    <span id="count"></span>
+                    </div>
+                </div>
+            <script type= "text/javascript" src="{% static 'script.js' %}"></script>
+            </article>
+    </div>
+<style>
+    article{
+        margin-top:2%;
+        align-content:center;
+        margin-left:4%; 
+        display:grid;
+        grid-template-columns: 30% 70%;
+        
+       
+        padding-right:10%;
+        margin-bottom:3%;
+    }
+
+    .media-content{
+        border: 1px solid white;
+        border-radius:30px;
+        width:600px;
+        padding-left:5%;
+        padding-right:5%;
+        padding-bottom:5%;
+        box-shadow:5px 5px 5px 5px grey;
+
+    }
+    .article-title{
+        margin-top:5%;
+        align-content:center;
+
+    }
+
+    h2 {
+        margin-bottom:2%;
+        margin-top:2%;
+        border-bottom:2px solid black;
+        max-width:600px;
+       
+    }
+
+    .image-content{
+        margin-top:2%;
+        width:20%;
+        margin-bottom:3%;
+        margin-right:2%;
+      }
+
+      .article-date{
+        margin-right:2%;
+        font-style:italic;
+        margin-top:5%;
+    
+      }
+</style>
+
+{% endblock %}

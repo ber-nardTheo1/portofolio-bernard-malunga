@@ -1,0 +1,149 @@
+{% extends "mywebsite/home.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="columns">
+    <div class="flex-container">
+        {% for Accomplishment in object_list %}
+            <article class="media content-section">
+                    <div class= "media-content">
+                        <h2 class="article-title" href="">{{ Accomplishment.title }}</h2>
+                        <p class="article-content">{{ Accomplishment.content | safe }}</p>
+                        <small class="article-link" href="">{{ Accomplishment.links }}</small>
+                        <div class="like-share-btns"> 
+                        <span id="count"></span>
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+    <div class="contact-help">
+        <p class="message">How can I help you?</p>
+        <label>
+            <input type="radio" name="help" value="work" id="work">Work
+        </label>
+        <label>
+            <input type="radio" name="help" value="Mentorship" id="Mentorship">Mentorship
+        </label>
+        <label>
+            <input type="radio" name="help" value="checking-website" id="checking-website">Just checking your website
+        </label>
+        <p id="reply" style="margin-top:2%; font-style: italic;" ></p>
+        <p>
+            <button id="button-response">Submit</button>
+        </p>
+    </div>    
+        <script>
+            let ButtonResponse = document.getElementById("button-response") 
+            let Reply = document.getElementById("reply")
+            ButtonResponse.addEventListener("click", ()=>{
+                let work = document.getElementById("work")
+                let mentorship = document.getElementById("Mentorship")
+                let CheckingWebsite = document.getElementById("checking-website")
+                    if(work.checked){
+                        Reply.innerHTML = `Contact me through email or <a href="https://www.linkedin.com/in/bernard-malunga-674760104/">Linkeldin</a>`
+                    } else if(mentorship.checked){
+                        Reply.innerHTML = `Current I am not available for mentorship.
+                                             <a href={% url 'post'%}>However you can check my articles here</a> `
+                    } else if (CheckingWebsite){
+                        Reply.innerHTML = `Thank you for checking my website`
+                    }
+                })
+        </script>
+    </div>
+
+</div>
+<style>
+
+    @media only screen and (max-width: 600px) {
+        body {
+          background-color: lightblue;
+        }
+      }
+    
+    *{
+        margin:0%;
+        padding: 0%;
+        box-sizing: border-box;
+    }
+
+   .columns{
+    display:grid;
+    grid-template-columns: 70% 30%;
+   }
+
+    article{
+        margin-top:2%;
+        align-content:center;
+        margin-left:15%; 
+
+    
+
+    }
+
+    .media-content{
+        border: 1px solid white;
+        border-radius:30px;
+        width:80%;
+        padding-left:5%;
+        padding-right:5%;
+        padding-bottom:5%;
+        box-shadow:5px 5px 5px 5px grey;
+        margin-bottom:2%;
+    }
+        
+
+    
+    .article-title{
+        margin-top:1%;
+    }
+    .image-content{
+        margin-top:2%;
+        width:30%;
+        margin-bottom:2%;
+        margin-left:10%;
+      }
+
+      h2 {
+        margin-bottom:2%;
+        margin-top:2%;
+        border-bottom:1px solid black;
+        max-width:100%;
+       
+    }
+
+    .contact-help{
+        margin-top:5%;
+        margin-right:20%;
+    }
+
+    .message{
+        margin-bottom:2%;
+        border:1px solid black;
+        border-radius:30px;
+        text-align:center;
+        align-content:center;
+        width:60%;
+        font-weight:bold;
+        padding-bottom:2%;
+        padding-top:2%;
+    }
+
+    label input{
+        margin-top:2%;
+        margin-left:1%;
+    }
+
+    @media only screen and (max-width: 600px) {
+        label input {
+          display:block;
+        }
+      }
+
+    a:hover{
+        color:green;
+        font-size:120%;
+    }
+</style>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% extends "mywebsite/home.html" %}
+{% load static %}
+{% block content %}
+   <article class="column">
+      <div class="background">
+         <div>
+            <h2 class="education-background" id="education-background-el">Education Background</h2>
+         </div>
+         <div class="schools-el">
+            <h3 class="first-school-name" id="first-school-name-el"></h3>
+            <p class="introduction-el" id="introduction-el">I enrolled at Nagoya University in April 2020 and graduated in March 2022.
+                At Nagoya University I majored in Economic Development and Policy Management. 
+               Some of the courses I studied are Macroeconomics, Microeconomics, Development Finance, Data processing and Project Management</p>
+         </div>
+         <div>
+            <h3 class="second-school-name" id="second-school-name-el"></h3>
+            <p class="second-introduction" id="second-introduction">I enrolled at Kwansei Gakuin University in April 2016
+                and graduated in March 2020. At Kwansei Gakuin University I majored in International Studies.
+                Some of the courses I studied are Development Economics, Entrepreneurship, Business Ethics and Management.</p>
+         </div>
+         <div class="work-experience" id="work-experience-el">
+            <h2 class="first-work-background" id="first-work-background-el"
+            style="margin-top:20px;">Work Experience</h2>
+         </div>
+         <div class="experience-list-li">
+            <h3 class="first-company-name" id="first-company-name-el"></h3>
+            <p class="achievements" id="achievements-el"> At Pasona Group, I joined the Awaji Youth Federation program. During the 
+               program, I organized and facilitated the YUNGA program. The program teaches Japanese university students SDGs related 
+               topics through lectures and workshop. In addition, it allows the students to implement projects related to SDGs.
+            </p>
+         </div>
+         <div>
+            <h3 class="second-company-name" id="second-company-name-el"></h3>
+            <p class="achievements" id="achievements-el"> During the 7 months of my internship with JMEC, I analyzed the Japanese market 
+               of high schools. I collected data through interviews, and survey. The aim of the research was to assist an American school
+               to expand its market in Japan.
+            </p>
+         </div>
+         <div>
+            <h3 class="third-company-name" id="third-company-name-el"></h3>
+            <p class="achievements" id="achievements-el"> From July to September 2018 I had an opportunity to do an internship at
+               the Innovation Village in Uganda. The company incubants startpups and help them to succussfully lauch their products.
+               My main task was to research different market opportunities for entrepreneurs in Uganda. I also researched on challenges 
+               that entrepreneurs face in Africa and how these challenges can be tackled.
+            </p>
+         </div>
+        
+         <script type="text/javascript" src="{% static '/script.js' %}"></script>
+      </div>
+   </article>
+ <style>
+   @media only screen and (max-width: 600px) {
+      body {
+        background-color: lightblue;
+      }
+    }
+   *{
+      margin:0, 0, 0, 0;
+      padding: 0, 0, 0, 0;
+      box-sizing: border-box;
+  }
+
+   article{
+      margin-top:5%;
+      align-content:center;
+      display:grid;
+      grid-template-columns:70% 30%;
+      margin-bottom:2%;
+
+      
+   }
+   p{
+      margin-top:1%;
+      margin-left:30%;
+      text-align:center;
+     
+      padding-bottom:1%;
+      padding-top:1%;
+      padding-left:2%;
+      padding-right:2%;
+   
+   
+
+   }
+
+   h2{
+      margin-left:30%;
+      text-align:center;
+
+   }
+
+   h3{
+      margin-left:30%;
+      margin-top:1%;
+      text-align:center;
+      font-style: oblique;
+   }
+
+.content-title{
+      display:inline-block;
+      margin-left:30%;
+      text-align:center;
+}
+
+
+
+   
+ </style>
+{% endblock %}
