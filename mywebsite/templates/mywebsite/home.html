@@ -24,21 +24,21 @@
             </ul>
         </div>
         <div>
-            <ul class="left-nav-link">
-                <nav class="left-nav-bar">
-                    <li class="btn-home" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
-                    <li class="work-background" style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
-                    <li calss="about-btn" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
-                    <li class="Articles-btn" style="padding-left:2%;"><a href={% url 'post'%}>Articles</a></li>
-                </nav>
-            </ul>
+            <nav class="left-nav-bar">
+                <ul id="left-nav-link" class="left-nav-link">
+                        <li class="btn-home" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
+                        <li class="work-background" style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
+                        <li calss="about-btn" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
+                        <li class="Articles-btn" style="padding-left:2%;"><a href={% url 'post'%}>Articles</a></li>
+                </ul>
+            </nav> 
         </div>
         </section>
     </header>
     {% block content %}
   
     <main>
-        <div class="content-column">
+        <div class="content-column" >
             <div class="article-metadata">
                 <h2 class="article-title" style=" margin-left: 15%;  padding-left: 15%; 
                     font-size: 200%;
@@ -60,15 +60,12 @@
                 <div class="image-column">
                     <img class="image-content" id="image-el" src={% static 'Bernard.jpg' %}>
                 </div>
-                <div class="farm-image-column">
-                    <img class="farm-image" id="image-el" src={% static 'Bernard_farm.jpg' %}>
-                </div>
             </div>
         </div>
         <div class="footer">
             <footer class="contant-columns">
                 <ul class="details"  style="margin-left:20%;">
-                    <button  style="margin-left:20%;">
+                    <button  style="">
                         <li class="email-contact">theomalunga0@gmail.com</li>
                     </button>
                     <button>
@@ -78,7 +75,8 @@
                         <li class="github-contact"><a href="https://github.com/ber-nardTheo1">GitHub</a></li>
                     </button>
                 </u>
-            <p style="margin-left: 20%; margin-top:1%;"> Copyright © 2022 Bernard Malunga</p>   
+                <p style=" margin-top:1%; margin-bottom:0%"> Copyright © 2022 Bernard Malunga</p>   
+            <script type="text/javascript" src="{% static '/home.js' %}"></script>
             </footer>
         </div>
     </main>    
@@ -98,18 +96,11 @@
         max-width: 60%;
         border: 0px solid;
         border-radius: 30px;
-        margin-top: 90%;
+        margin-top: 50%;
         margin-left:20%;
         margin-bottom: 5%;
     }
-    @media only screen and (max-width: 600px) {
-        .image-content {
-          margin-top:210%
-        }
-
-        h2{
-            font-size:100%
-        }
-      }
+    
+      
 </style>
 {% endblock %}
