@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'ckeditor',
     'ckeditor_uploader',
+     'bootstrap5',
 
 
     'django.contrib.admin',
