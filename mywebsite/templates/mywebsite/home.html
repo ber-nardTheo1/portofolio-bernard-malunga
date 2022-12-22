@@ -16,7 +16,7 @@
     <header>
         <section>
         <div>
-            <ul class="nav-link">
+            <ul class="nav-link-logo">
                 <nav class="nav-bar-logo">
                     <img class="logo-image" style="width:30%; border:0px solid; border-radius:50%; margin-bottom:1%;
                     " src={% static 'Bernard_logo.jpg' %}>
@@ -31,10 +31,10 @@
                     <span class="bar"></span>
                 </a>
                 <ul id="left-nav-link" class="left-nav-link">
-                        <li class="btn-home" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
-                        <li class="work-background" style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
-                        <li calss="about-btn" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
-                        <li class="Articles-btn" style="padding-left:2%;"><a href={% url 'post'%}>Articles</a></li>
+                    <li class="nav-link" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
+                    <li class="nav-link" style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
+                    <li class="nav-link" style="padding-left:2%;"><a href={% url 'post'%}>Articles</a></li>
+                    <li calss="nav-link" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
                 </ul>
             </nav> 
         </div>
@@ -83,8 +83,8 @@
                 <p style=" margin-top:1%; margin-bottom:0%"> Copyright © 2022 Bernard Malunga</p>   
             </footer>
         </div>
-        <script type="text/javascript" src="{% static '/home.js' %}"></script>
-    </main>    
+    </main>  
+    <script type="text/javascript" src="{% static '/script.js' %}"></script>
 </body>
 </html>
 <style>
