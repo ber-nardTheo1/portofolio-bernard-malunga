@@ -37,3 +37,9 @@ ButtonResponse.addEventListener("click", ()=>{
     }
 })
 
+const toggleButton = getElementById("toggle-button")[0]
+const NavLinks = getElementById("nav-Link")[0]
+
+toggleButton.addEventListener("click", () => {
+    NavLinks.ClassList.toggle("active")
+})
