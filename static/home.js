@@ -1,7 +1,6 @@
-const LeftNavLink = document.getElementsById('left-nav-bar')
-const ToggleButton = document.getElementById('toggle-button')
+const toggleButton = document.getElementsById('toggle-button')[0]
+const navbarLinks = document.getElementsById('left-nav-link')[0]
 
-ToggleButton.addEventListener('click', () =>{
-    LeftNavLink.ClassList.toggle('active')
-
+toggleButton.addEventListener('click', () => {
+  navbarLinks.classList.toggle('active')
 })
