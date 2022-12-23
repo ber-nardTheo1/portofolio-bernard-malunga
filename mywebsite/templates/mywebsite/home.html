@@ -30,16 +30,25 @@
                     <span class="bar"></span>
                     <span class="bar"></span>
                 </a>
-                <ul id="left-nav-link" class="left-nav-link">
-                    <li class="nav-link" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
-                    <li class="nav-link" style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
-                    <li class="nav-link" style="padding-left:2%;"><a href={% url 'post'%}>Articles</a></li>
-                    <li calss="nav-link" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
-                </ul>
+                <div  id="left-nav-link" class="left-nav-link">
+                    <ul>
+                        <li  class="nav-link" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
+                        <li class="nav-link"  style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
+                        <li  class="nav-link" style="padding-left:2%;"><a href={% url 'post'%}>Articles</a></li>
+                        <li  class="nav-link" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
+                    </ul>
+                <div>
             </nav> 
         </div>
         </section>
-        <script type="text/javascript" src="{% static '/script.js' %}"></script>
+        <script>
+            const toggelButton = document.getElementsByClassName('toggle-button')[0]
+            const NavLinks = document.getElementsByClassName('left-nav-link')[0]
+
+            toggelButton.addEventListener("mouseover", () => {
+                NavLinks.classList.toggle("left-nav-link")
+            })
+        </script>
     </header>
     {% block content %}
   
