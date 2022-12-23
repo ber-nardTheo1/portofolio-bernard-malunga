@@ -44,6 +44,7 @@ section{
 
 .nav-bar-logo{
     margin-left:2%;
+    width:70%
 }
 
 
@@ -99,9 +100,9 @@ a{
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    width:31px;
-    height: 21px;
-    margin-top:2%;
+    width:4%;
+    height: 2%;
+    margin-top:1%;
     margin-right: 1%;
 
 }
@@ -115,6 +116,7 @@ a{
 
     .toggle-button {
         display: flex;
+
     }
 
     .left-nav-link .nav-link {
@@ -135,7 +137,6 @@ a{
         list-style: none;
         display: inline-block;
         font-size: small;
-        margin-left: 40%;
     
       
        

@@ -1,9 +1,7 @@
-const EducationBackground = document.querySelectorAll("#education-background")
 const FirstUniversity = document.getElementById("first-school-name-el")
 const introduction = document.getElementById("introduction-el")
 const SecondUniversity = document.getElementById("second-school-name-el")
 const secondIntroduction = document.getElementById("second-introduction")
-const WorkExperience = document.getElementById("#work-experience-el")
 const FirstWorkBackground = document.getElementById("first-company-name-el")
 const SecondWorkBackground = document.getElementById("second-company-name-el")
 const ThirdWorkBackground = document.getElementById("third-company-name-el")
@@ -35,11 +33,4 @@ ButtonResponse.addEventListener("click", ()=>{
     } else if (CheckingWebsite){
         Reply.innerHTML = `Thank you for checking my website`
     }
-})
-
-const toggleButton = getElementByClassName("toggle-button")[0]
-const NavLinks = getElementByClassName("nav-Link")[0]
-
-toggleButton.addEventListener("click", () => {
-    NavLinks.classList.toggle("active")
 })
