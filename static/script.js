@@ -12,13 +12,13 @@ const Work = ["Pasona Group", "Japan Marketing Expansion Competition Organizatio
 
 
 
-FirstUniversity.textContent="Nagoya University"
+FirstUniversity.innerHTML="Nagoya University"
 
-SecondUniversity.textContent="Kwansei Gakuin University"
+SecondUniversity.innerHTML="Kwansei Gakuin University"
 
-FirstWorkBackground.textContent = Work[0]
-SecondWorkBackground.textContent = Work[1]
-ThirdWorkBackground.textContent = Work[2]
+FirstWorkBackground.innerHTML= Work[0]
+SecondWorkBackground.innerHTML = Work[1]
+ThirdWorkBackground.innerHTML= Work[2]
 
 let ButtonResponse = document.getElementById("button-response") 
 let Reply = document.getElementById("reply")
@@ -37,9 +37,9 @@ ButtonResponse.addEventListener("click", ()=>{
     }
 })
 
-const toggleButton = getElementById("toggle-button")[0]
-const NavLinks = getElementById("nav-Link")[0]
+const toggleButton = getElementByClassName("toggle-button")[0]
+const NavLinks = getElementByClassName("nav-Link")[0]
 
 toggleButton.addEventListener("click", () => {
-    NavLinks.ClassList.toggle("active")
+    NavLinks.classList.toggle("active")
 })
