@@ -55,15 +55,15 @@
     <main>
         <div class="content-column" >
             <div class="article-metadata">
-                <h2 class="article-title" style=" margin-left: 15%;  padding-left: 15%; 
+                <h2 class="article-title" style=" margin-left: 5%;  padding-left: 5%; 
                     font-size: 200%;
                     background: -webkit-linear-gradient(black, green);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     }
                   "> Web-Developer</h2>
-                <p class="article-content"  id="self-introduction" style=" font-style: italic;  margin-left: 15%;
-                  padding-left: 15%;  margin-top: 1%;">
+                <p class="article-content"  id="self-introduction" style=" font-style: italic;  margin-left: 5%;
+                  padding-left: 5%;  margin-top: 1%;">
                     Welcome to my career portofolio. I graduated from Nagoya University with a master`s degree in Economic Development
                     and Policy Management. I am also a self-taught junior programmer. I Develop web applications using Django framework, Python,
                     JavaScript, HTML and CSS.
@@ -79,8 +79,8 @@
         </div>
         <div class="footer">
             <footer class="contant-columns">
-                <ul class="details"  style="margin-left:20%;">
-                    <button  style="">
+                <ul class="details"  style="text-align:center;";>
+                    <button style="margin-top:1%">
                         <li class="email-contact">theomalunga0@gmail.com</li>
                     </button>
                     <button>
@@ -89,8 +89,8 @@
                     <button>
                         <li class="github-contact"><a href="https://github.com/ber-nardTheo1" target="_blank">GitHub</a></li>
                     </button>
-                </u>
-                <p style=" margin-top:1%; margin-bottom:0%"> Copyright © 2022 Bernard Malunga</p>   
+                </ul>
+                <p style=" margin-top:1%; margin-bottom:0%; text-align:center;"> Copyright © 2022 Bernard Malunga</p>   
             </footer>
         </div>
     </main>  
@@ -98,6 +98,10 @@
 </body>
 </html>
 <style>
+    *{
+        margin:0%;
+        padding:0%;
+    }
     .farm-image{
         max-width: 70%;
         border-radius: 30px;
@@ -115,6 +119,24 @@
         margin-left:20%;
         margin-bottom: 5%;
     }
+
+    @media only screen and (max-width: 600px) {
+
+        .image-content{
+            object-fit: contain;
+            max-width: 90%;
+            border: 0px solid;
+            border-radius: 30px;
+            margin-top: 150%;
+            margin-left: 10%;
+            margin-bottom: 5%;
+        }
+        .details{
+            margin-left:5%;
+            text-align:center;
+        }
+         
+      }
     
       
 </style>

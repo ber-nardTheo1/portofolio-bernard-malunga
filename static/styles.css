@@ -4,7 +4,6 @@
         min-height:100vh;
         margin:0;
         padding: 0;
-        overflow-y: hidden;
         overflow-x: hidden;
     }
     
@@ -145,7 +144,7 @@ a{
 .content-column{
     margin-right: 30%;
     display: grid;
-    grid-template-columns: 90% 30%;
+    grid-template-columns: 90% 40%;
 }
 
 
@@ -165,32 +164,6 @@ a{
   }
 
 
-.image-content{
-    object-fit: contain;
-    max-width: 50%;
-    border: 0px solid;
-    border-radius: 30px;
-    margin-top: 30%;
-    margin-left: 70%;
-    margin-bottom: 2%;
-}
-
-
-@media only screen and (max-width: 600px) {
-
-    .image-content{
-        object-fit: contain;
-        max-width: 50%;
-        border: 0px solid;
-        border-radius: 30px;
-        margin-top: 30%;
-        margin-left: 70%;
-        margin-bottom: 5%;
-    }
-    
-     
-  }
-
 
 .footer{
     margin-top: 15%;
@@ -205,20 +178,29 @@ a{
 
 
 
-.email-contanct .linkedln-contact .github li{
+.email-contact .linkedln-contact .github li{
     text-decoration: none;
     list-style: none;
-    display: inline-block;
+    display: flex;
    
 }
 
-   
+.details{
+    text-align: center;
 
-.linkedln-contact a{
-    margin-right: 7%;
 }
 
-button{
+@media only screen and (max-width: 600px) {
+    button {
+      display: block;
+      text-align: center;
+    }
+    .email-contact{
+        margin-top:4%;
+    }
+  }
+
+button li a{
     width:auto;
     height:70%;
     margin-top: 5%;
@@ -229,20 +211,9 @@ button{
     padding:1%;
     border:1% solid;
     border-radius:30px;
+    align-content: center;
     text-align: center;
-}
-
-@media only screen and (max-width: 600px) {
-    button {
-      display: block;
-    }
-  }
-
-.email-contanct .linkedln-contact .github button a{
-    border:1% solid;
-    border-radius:20%;
-    
-   
+  
 }
 
 button a:hover{
