@@ -24,7 +24,6 @@
 
 }
 
-
 body{
     background-color:white;
     color:black;
@@ -35,19 +34,39 @@ body{
 
 
 section{
-    display:grid;
-    grid-template-columns: 30% 70%;
     background-color: darkgreen;
+    padding: 0;
+    margin:0;
+    
   
 }
 
-.nav-bar-logo{
+.row{
+    margin:0;
+    padding:0;
+}
+
+#nav-container{
+    display: flex;
+}
+
+@media screen and (min-width: 1200px){
+    #container {
+        max-width: 1440px;
+    }
+
+}
+
+
+
+
+#nav-bar-logo{
     margin-left:2%;
     width:70%
 }
 
 
-.left-nav-bar ul{ 
+#left-nav-bar ul{ 
 
     color: black;
     font-weight: bold;
@@ -55,13 +74,14 @@ section{
     text-decoration: none;
     list-style: none;
     display: flex;
+    margin-bottom:4%;
   
    
 }
 
 
 nav{
-    margin-top: 5%;
+margin:0;
    
 }
 
@@ -74,7 +94,7 @@ nav{
    
 }
 
-.left-nav-link li a{
+#left-nav-link li a{
     transition-property: font-size;
     transition-duration: 1s;
     transition-delay: 0.5s;
