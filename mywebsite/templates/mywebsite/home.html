@@ -11,102 +11,97 @@
     <meta property="og:type" content="portofolio">
     <title>Bernard Malunga</title>
     <link rel="stylesheet" href="{% static 'styles.css'%}"> 
-    <link rel="stylesheet" href= "{% static 'css/styles.css' %}">
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    
 </head>
 <body>
     <header>
-        <section id="container" class="container">
-        <div class="row">
-            <div id="nav-container">
-                <nav id="left-nav-bar" class="navbar navbar-expand-xl">
-                    <div class="col">
+        <nav id="header-nav" class="navbar navbar-default">
+            <div id="container" class="container">
+                    <div Id="navbar-header" class="navbar-header">
                         <ul id="nav-link-logo" class="navbar-brand">
-                                <img class="logo-image" style="width:20%; border:0px solid; border-radius:50%; margin-bottom:1%;
-                                " src={% static 'Bernard_logo.jpg' %}>
+                                <img  id="logo-img" class="pull-left visible-md visible-lg" src={% static 'Bernard_logo.jpg' %}>
                         </ul>
                     </div>
-                    <div>
-                        <a href="" id="toggle-button" class="toggle-button">
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                            <span class="bar"></span>
-                        </a>
-                        <div  id="left-nav-link" class="nav navbar-nav navbar-right row">
-                            <ul>
-                                <li  class="nav-link" style="padding-left:10%;"><a href={% url 'home'%}>Home</a></li>
-                                <li class="nav-link"  style="padding-left:8%;"><a href={% url 'career'%}>Background</a></li>
-                                <li  class="nav-link" style="padding-left:5%;"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
-                                <li  class="nav-link" style="padding-left:2%;"><a href={% url 'post'%} target="_blank">Articles</a></li>
-                            </ul>
-                        </div>
+                <div id="left-nav-bar" class="left-nav-bar">
+                    <a href="" id="toggle-button" class="navbar-toggle collapsed " data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+                        <span class="sr-only">Navigation </span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div id="collapsable-nav" class="collapse navbar-collapse left-nav-link">
+                        <ul class=" nav navbar-nav navbar-right" >
+                            <li  id="nav-link" class="nav-link"  ><a href={% url 'home'%}>Home</a></li>
+                            <li id="nav-link" class="nav-link"><a href={% url 'career'%}>Background</a></li>
+                            <li  id="nav-link" class="nav-link"><a href={% url 'Accomplishment'%}>Accomplishments</a></li>
+                            <li  id="nav-link" class="nav-link"><a href={% url 'post'%}>Articles</a></li>
+                        </ul>
                     </div>
-                </nav>
-            </div> 
-        </div>
-        </section>
+                </div>
+            </div>
+        </div> 
+        </nav>
         <script>
-            const toggelButton = document.getElementsByClassName('toggle-button')[0]
-            const NavLinks = document.getElementsByClassName('left-nav-link')[0]
+            const toggelButton = document.getElementsByClassName('navbar-toggle')[0]
+            const NavLinks = document.getElementsByClassName('collapse')[0]
 
             toggelButton.addEventListener("mouseover", () => {
-                NavLinks.classList.toggle("left-nav-link")
+                NavLinks.classList.toggle("collapse")
             })
         </script>
+        
     </header>
     {% block content %}
   
     <main>
-        <div class="content-column" >
-            <div class="article-metadata">
-                <h2 class="article-title" style=" margin-left: 5%;  padding-left: 5%; 
-                    font-size: 200%;
-                    background: -webkit-linear-gradient(black, green);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    }
-                  "> Web-Developer</h2>
-                <p class="article-content"  id="self-introduction" style=" font-style: italic;  margin-left: 5%;
-                  padding-left: 5%;  margin-top: 1%;">
-                    Welcome to my career portofolio. I graduated from Nagoya University with a master`s degree in Economic Development
-                    and Policy Management. I am also a self-taught junior programmer. I Develop web applications using Django framework, Python,
-                    JavaScript, HTML and CSS.
-                    <br> I like developing my practical and theorical skills to enhance my career path and 
-                    also develop my personality. I hope this portofolio provides insight into my character, programming background, analytical skills, and accomplishments.
-                </p>
-            </div>
-            <div class= "images-colums">
-                <div class="image-column">
-                    <img class="image-content" id="image-el" src={% static 'Bernard.jpg' %}>
+        <div class="container">
+            <div class="content-column " >
+                <div class="article-metadata col-sm-8">
+                    <h2 class="article-title" style=" margin-left: 5%;  padding-left: 5%; 
+                        font-size: 200%;
+                        background: -webkit-linear-gradient(black, green);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        }
+                      "> Web-Developer</h2>
+                    <p class="article-content"  id="self-introduction" style=" font-style: italic;  margin-left: 5%;
+                      padding-left: 5%;  margin-top: 1%; font-size:medium;">
+                        Welcome to my career portofolio. I graduated from Nagoya University with a master`s degree in Economic Development
+                        and Policy Management. I am also a self-taught junior programmer. I Develop web applications using Django framework, Python,
+                        JavaScript, HTML and CSS.
+                        <br> I like developing my practical and theorical skills to enhance my career path and 
+                        also develop my personality. I hope this portofolio provides insight into my character, programming background, analytical skills, and accomplishments.
+                    </p>
+                </div>
+                <div class= "images-colums col-sm-4">
+                    <div class="image-column">
+                        <img class="image-content visible-lg" id="image-el" src={% static 'Bernard.jpg' %}>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="footer">
-            <footer class="contant-columns">
-                <ul class="details"  style="text-align:center;";>
-                    <button style="margin-top:1%">
-                        <li class="email-contact">theomalunga0@gmail.com</li>
+            <footer class="container">
+                <ul class="details"  style="text-align:center; margin-top:1%;";>
+                    <button id="contact-button" class="column btn btn-primary" >
+                        <li class="email-contact" style="margin-top:0%;">theomalunga0@gmail.com</li>
                     </button>
-                    <button>
-                        <li class="linkedln-contact"><a href="https://www.linkedin.com/in/bernard-malunga-674760104/" target="_blank">Linkeldn</a></li>
+                    <button  id="linkedln-button" class="column btn btn-primary">
+                        <li class=" linkedln-contact"><a style="color:black" href="https://www.linkedin.com/in/bernard-malunga-674760104/" target="_blank">Linkeldn</a></li>
                     </button>
-                    <button>
-                        <li class="github-contact"><a href="https://github.com/ber-nardTheo1" target="_blank">GitHub</a></li>
+                    <button  id="github-button" class="column btn btn-primary">
+                        <li class="github-contact"><a style="color:black" href="https://github.com/ber-nardTheo1" target="_blank">GitHub</a></li>
                     </button>
                 </ul>
-                <p style=" margin-top:1%; margin-bottom:0%; text-align:center;"> Copyright © 2022 Bernard Malunga</p>   
+                <p style=" margin-bottom:1%; text-align:center;" style="color:black"> Copyright © 2022 Bernard Malunga</p>   
             </footer>
         </div>
-    </main>  
+    </main>
     
 </body>
 </html>
 <style>
-    *{
-        margin:0%;
-        padding:0%;
-    }
     .farm-image{
         max-width: 70%;
         border-radius: 30px;
@@ -125,7 +120,7 @@
         margin-bottom: 5%;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 760px) {
 
         .image-content{
             object-fit: contain;
@@ -133,10 +128,11 @@
             border: 0px solid;
             border-radius: 30px;
             margin-top: 150%;
-            margin-left: 10%;
+            margin-left: 5%;
             margin-bottom: 5%;
         }
         .details{
+            margin-top:1%;
             margin-left:5%;
             text-align:center;
         }

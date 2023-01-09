@@ -1,13 +1,3 @@
-@media only screen and (max-width:1000px) {
-    html, body{
-      
-        min-height:100vh;
-        margin:0;
-        padding: 0;
-        overflow-x: hidden;
-    }
-    
-}
 
     .email-contanct .linkedln-contact .github li{
         text-decoration: none;
@@ -16,13 +6,25 @@
        
     }
 
+    @media only screen and (max-width:760px) {
+        html, body{
+    
+            min-height:100vh;
+            margin:0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+    }
 
-*{
-    margin:0%;
-    padding: 0%;
-    box-sizing: border-box;
+    *{
+        margin:0%;
+        padding: 0%;
+        box-sizing: border-box;
+    
+    }
+    
 
-}
+
 
 body{
     background-color:white;
@@ -33,40 +35,45 @@ body{
 
 
 
-section{
+#header-nav{
     background-color: darkgreen;
-    padding: 0;
-    margin:0;
+    max-width: 100%;
+    height:20vh;
+    border-radius: 0;
+    border: 0;
     
-  
 }
 
-.row{
-    margin:0;
-    padding:0;
+#container>#navbar-header {
+    margin-right: -25px;
+    margin-left: -15px;
 }
+
+span{
+    color:white;
+    width:5%;
+}
+
 
 #nav-container{
     display: flex;
 }
 
-@media screen and (min-width: 1200px){
-    #container {
-        max-width: 1440px;
-    }
-
+#container{
+    max-width: 100%;
+    display: flex;
 }
 
 
 
-
-#nav-bar-logo{
-    margin-left:2%;
-    width:70%
+#logo-img{
+    width:15%;
+ border:0px solid; 
+ border-radius:50%; 
 }
 
 
-#left-nav-bar ul{ 
+  #collapsable-nav li { 
 
     color: black;
     font-weight: bold;
@@ -74,7 +81,7 @@ section{
     text-decoration: none;
     list-style: none;
     display: flex;
-    margin-bottom:4%;
+    margin-top:5%;
   
    
 }
@@ -86,25 +93,27 @@ margin:0;
 }
 
 
-.left-nav-bar{
-   padding-left: 40%;
+#collapsable-nav{
    text-align: center;
    align-content: center;
-   
+   color: black;
    
 }
 
-#left-nav-link li a{
+#collapsable-nav li a{
     transition-property: font-size;
     transition-duration: 1s;
     transition-delay: 0.5s;
     transition-timing-function: ease-in;
+    color: black;
+   
 
 }
 
-.left-nav-bar li a:hover{
+#collapsable-nav li a:hover{
     color:white;
     font-size:15px;
+    text-decoration: none;
 }
 
 a{
@@ -112,29 +121,40 @@ a{
     text-decoration: none;
 }
 
-.toggle-button{
+#toggle-button{
     position:absolute;
+
+}
+
+#collapsable-nav{
+    margin-right:-35px;
+    margin-left:-25px
+    
+}
+
+
+.collapse{
+    position:relative;
     top:.75rem;
-    right:1rem;
-    display: none;
     flex-direction: column;
     justify-content: space-between;
-    width:4%;
-    height: 2%;
+    width:5%;
+    height: 10%;
     margin-top:1%;
-    margin-right: 1%;
+    right:0.5rem;
+    border:0%;
+    border-radius: 0%;
+    clear: both;
+
 
 }
 
-.toggle-button .bar{
-    height: 3px;
-    background-color: white;
-    border-radius: 10px;
-}
-@media (max-width: 1000px) {
 
-    .toggle-button {
+@media (max-width: 760px) {
+
+    .collapse {
         display: flex;
+        position:fixed
 
     }
 
@@ -144,27 +164,380 @@ a{
 
 
     .left-nav-link .nav-link li a{
-        display: block;
+        display: inline-flex;
     }
 
-    .left-nav-bar ul{ 
+    .left-nav-bar ul{
+        width:100%;
+        height: 100vh;
+    }
 
-        color: black;
+    #collapsable-nav{
+        margin-right:-35px;
+        margin-left:-25px;
+        
+    }
+
+    .left-nav-bar ul{
+
+        color:black;
         font-weight: bold;
         cursor: pointer;
         text-decoration: none;
         list-style: none;
         display: inline-block;
         font-size: small;
-    
-      
+        background-color: whitesmoke;
+        left:0;
+        text-align: center;
+        margin-top: 72%;
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0;
+        padding-left:0;
        
     }
+    #collapsable-nav a { /* Collapsed nav menu text */
+        font-size: 1.2em;
+      }
+      #collapsable-nav a span { /* Collapsed nav menu glyph */
+        font-size: 1em;
+        margin-right: 5px;
+      }
+      #collapsable-nav li a:hover{
+        color:black;
+      }
+
+      .content-column{
+        margin-left: 12%;
+    
+    }
+
 }
-.content-column{
-    margin-right: 30%;
-    display: grid;
-    grid-template-columns: 90% 40%;
+
+@media (max-width: 660px) {
+
+    .collapse {
+        display: flex;
+        position:fixed
+
+    }
+
+    .left-nav-link .nav-link {
+        display: none;
+    }
+
+
+    .left-nav-link .nav-link li a{
+        display: inline-flex;
+    }
+
+    .left-nav-bar ul{
+        width:100%;
+        height: 100vh;
+    }
+
+    #collapsable-nav{
+        margin-right:-35px;
+        margin-left:-25px;
+        
+    }
+
+    .left-nav-bar ul{
+
+        color:black;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+        display: inline-block;
+        font-size: small;
+        background-color: whitesmoke;
+        left:0;
+        text-align: center;
+        margin-top: 72%;
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0;
+        padding-left:0;
+       
+    }
+    #collapsable-nav a { /* Collapsed nav menu text */
+        font-size: 1.2em;
+      }
+      #collapsable-nav a span { /* Collapsed nav menu glyph */
+        font-size: 1em;
+        margin-right: 5px;
+      }
+      #collapsable-nav li a:hover{
+        color:black;
+      }
+
+      .content-column{
+        margin-left: 15%;
+    
+    }
+
+}
+
+@media (max-width: 560px) {
+
+    .collapse {
+        display: flex;
+        position:fixed
+
+    }
+
+    .left-nav-link .nav-link {
+        display: none;
+    }
+
+
+    .left-nav-link .nav-link li a{
+        display: inline-flex;
+    }
+
+    .left-nav-bar ul{
+        width:100%;
+        height: 100vh;
+    }
+
+    #collapsable-nav{
+        margin-right:-35px;
+        margin-left:-25px;
+        
+    }
+
+    .left-nav-bar ul{
+
+        color:black;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+        display: inline-block;
+        font-size: small;
+        background-color: whitesmoke;
+        left:0;
+        text-align: center;
+        margin-top: 72%;
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0;
+        padding-left:0;
+       
+    }
+    #collapsable-nav a { /* Collapsed nav menu text */
+        font-size: 1.2em;
+      }
+      #collapsable-nav a span { /* Collapsed nav menu glyph */
+        font-size: 1em;
+        margin-right: 5px;
+      }
+      #collapsable-nav li a:hover{
+        color:black;
+      }
+
+      .content-column{
+        margin-left: 27%;
+    
+    }
+
+}
+
+@media (max-width:460) {
+
+    .collapse {
+        display: flex;
+        position:fixed
+
+    }
+
+    .left-nav-link .nav-link {
+        display: none;
+    }
+
+
+    .left-nav-link .nav-link li a{
+        display: inline-flex;
+    }
+
+    .left-nav-bar ul{
+        width:100%;
+        height: 100vh;
+    }
+
+    #collapsable-nav{
+        margin-right:-35px;
+        margin-left:-25px;
+        
+    }
+
+    .left-nav-bar ul{
+
+        color:black;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+        display: inline-block;
+        font-size: small;
+        background-color: whitesmoke;
+        left:0;
+        text-align: center;
+        margin-top: 72%;
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0;
+        padding-left:0;
+       
+    }
+    #collapsable-nav a { /* Collapsed nav menu text */
+        font-size: 1.2em;
+      }
+      #collapsable-nav a span { /* Collapsed nav menu glyph */
+        font-size: 1em;
+        margin-right: 5px;
+      }
+      #collapsable-nav li a:hover{
+        color:black;
+      }
+
+      .content-column{
+        margin-left: 30%;
+    
+    }
+
+}
+
+@media (max-width:380px) {
+
+    .collapse {
+        display: flex;
+        position:fixed
+
+    }
+
+    .left-nav-link .nav-link {
+        display: none;
+    }
+
+
+    .left-nav-link .nav-link li a{
+        display: inline-flex;
+    }
+
+    .left-nav-bar ul{
+        width:100%;
+        height: 100vh;
+    }
+
+    #collapsable-nav{
+        margin-right:-35px;
+        margin-left:-25px;
+        
+    }
+
+    .left-nav-bar ul{
+
+        color:black;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+        display: inline-block;
+        font-size: small;
+        background-color: whitesmoke;
+        left:0;
+        text-align: center;
+        margin-top: 72%;
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0;
+        padding-left:0;
+       
+    }
+    #collapsable-nav a { /* Collapsed nav menu text */
+        font-size: 1.2em;
+      }
+      #collapsable-nav a span { /* Collapsed nav menu glyph */
+        font-size: 1em;
+        margin-right: 5px;
+      }
+      #collapsable-nav li a:hover{
+        color:black;
+      }
+
+      .content-column{
+        margin-left: 38%;
+    
+    }
+
+}
+
+@media (max-width:260px) {
+
+    .collapse {
+        display: flex;
+        position:fixed
+
+    }
+
+    .left-nav-link .nav-link {
+        display: none;
+    }
+
+
+    .left-nav-link .nav-link li a{
+        display: inline-flex;
+    }
+
+    .left-nav-bar ul{
+        width:100%;
+        height: 100vh;
+    }
+
+    #collapsable-nav{
+        margin-right:-35px;
+        margin-left:-25px;
+        
+    }
+
+    .left-nav-bar ul{
+
+        color:black;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        list-style: none;
+        display: inline-block;
+        font-size: small;
+        background-color: whitesmoke;
+        left:0;
+        text-align: center;
+        margin-top: 72%;
+        margin-right:0px;
+        margin-left:0px;
+        padding-right:0;
+        padding-left:0;
+       
+    }
+    #collapsable-nav a { /* Collapsed nav menu text */
+        font-size: 1.2em;
+      }
+      #collapsable-nav a span { /* Collapsed nav menu glyph */
+        font-size: 1em;
+        margin-right: 5px;
+      }
+      #collapsable-nav li a:hover{
+        color:black;
+      }
+
+      .content-column{
+        margin-left: 38%;
+    
+    }
+
 }
 
 
@@ -198,11 +571,16 @@ a{
 
 
 
-.email-contact .linkedln-contact .github li{
+.email-contact .linkedln-contact .github-contact li a{
     text-decoration: none;
     list-style: none;
     display: flex;
+    color:black;
    
+}
+
+#linkedln-button{
+    color:black;
 }
 
 .details{
@@ -215,19 +593,33 @@ a{
       display: block;
       text-align: center;
     }
-    .email-contact{
-        margin-top:4%;
+    #contact-button{
+        margin-top: 2%;
     }
+    
+    #linkedln-button{
+        margin-top: 2%;
+    
+    }
+    
+    #github-button{
+        margin-top: 2%;
+    
+    }
+    
   }
 
-button li a{
+
+
+
+
+button li {
     width:auto;
-    height:70%;
+    height:50%;
     margin-top: 5%;
     color: black;
     font-weight: bold;
     cursor: pointer;
-    background-color:green;
     padding:1%;
     border:1% solid;
     border-radius:30px;
@@ -240,6 +632,23 @@ button a:hover{
     color:white
 }
 
+#contact-button{
+    background-color: green;
+    border-color: green;
+}
+
+#linkedln-button{
+    background-color: green;
+    border-color: green;
+
+}
+
+#github-button{
+    background-color: green;
+    border-color: green;
+
+}
+
 footer ul li{
     text-decoration: none;
     list-style: none;
@@ -248,4 +657,5 @@ footer{
     clear:both;
     margin-bottom: 0%;
     padding: 0%;
+    height:10vh;
 }

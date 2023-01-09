@@ -2,37 +2,41 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="columns">
-    <div class="flex-container">
-        {% for Accomplishment in object_list %}
-            <article class="media content-section">
-                    <div class= "media-content">
-                        <h2 class="article-title" href="">{{ Accomplishment.title }}</h2>
-                        <p class="article-content">{{ Accomplishment.content | safe }}</p>
-                        <small class="article-link" href="">{{ Accomplishment.links }}</small>
-                        <div class="like-share-btns"> 
-                        <span id="count"></span>
+<div id="container-content" class="container">
+    <div class="content-column">
+        <div class="col-sm-8">
+            {% for Accomplishment in object_list %}
+                <article class="media content-section" style="padding-left:5%;">
+                        <div class= "media-content">
+                            <h2 class="article-title" href="">{{ Accomplishment.title }}</h2>
+                            <p class="article-content">{{ Accomplishment.content | safe }}</p>
+                            <small class="article-link" href="">{{ Accomplishment.links }}</small>
+                            <div class="like-share-btns"> 
+                            <span id="count"></span>
+                        </div>
                     </div>
-                </div>
-            </article>
-        {% endfor %}
+                </article>
+            {% endfor %}
+        </div>
+        <div id="inquire-info" class="col-sm-4 visible-md visible-lg">
+            <div class="contact-help">
+                <p class="message">How can I help you?</p>
+                <label>
+                    <input type="radio" name="help" value="work" id="work">Work
+                </label>
+                <label>
+                    <input type="radio" name="help" value="Mentorship" id="Mentorship">Mentorship
+                </label>
+                <label>
+                    <input type="radio" name="help" value="checking-website" id="checking-website">Just checking your website
+                </label>
+                <p id="reply" style="margin-top:2%; font-style: italic;" ></p>
+                <p>
+                    <button id="button-response">Submit</button>
+                </p>
+            </div>   
+        </div>
     </div>
-    <div class="contact-help">
-        <p class="message">How can I help you?</p>
-        <label>
-            <input type="radio" name="help" value="work" id="work">Work
-        </label>
-        <label>
-            <input type="radio" name="help" value="Mentorship" id="Mentorship">Mentorship
-        </label>
-        <label>
-            <input type="radio" name="help" value="checking-website" id="checking-website">Just checking your website
-        </label>
-        <p id="reply" style="margin-top:2%; font-style: italic;" ></p>
-        <p>
-            <button id="button-response">Submit</button>
-        </p>
-    </div>    
         <script>
             let ButtonResponse = document.getElementById("button-response") 
             let Reply = document.getElementById("reply")
@@ -51,15 +55,8 @@
                 })
         </script>
     </div>
-
 </div>
 <style>
-
-    @media only screen and (max-width: 600px) {
-        body {
-          background-color: lightblue;
-        }
-      }
     
     *{
         margin:0%;
@@ -67,16 +64,13 @@
         box-sizing: border-box;
     }
 
-   .columns{
-    display:grid;
-    grid-template-columns: 70% 30%;
-   }
 
     article{
-        margin-top:2%;
+        margin-top:10%;
         align-content:center;
-        margin-left:15%; 
-        max-width:100%;
+        margin-left:10%; 
+        width:100%;
+        padding-top:2%;
 
     
 
@@ -87,7 +81,7 @@
         border-radius:30px;
         width:80%;
         padding-left:5%;
-        padding-right:5%;
+        padding-right:3%;
         padding-bottom:5%;
         box-shadow:5px 5px 5px 5px grey;
         margin-bottom:2%;
@@ -113,9 +107,10 @@
        
     }
 
+
     .contact-help{
         margin-top:5%;
-        margin-right:20%;
+        margin-right:2%;
     }
 
     .message{
@@ -132,18 +127,31 @@
 
     label input{
         margin-top:2%;
-        margin-left:1%;
+        display:inline-flex;
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 760px) {
         label input {
           display:block;
         }
+        article{
+            margin-left: 30%;
+            width:90%;
+        }
       }
+
 
     a:hover{
         color:green;
-        font-size:120%;
+
+    }
+
+    button{
+        background-color:green;
+        border:1px solid;
+        border-radius:30px;
+        width:18%;
+
     }
 </style>
 
